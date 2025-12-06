@@ -48,18 +48,18 @@ const Phase1Stage: React.FC<Phase1StageProps> = ({ onComplete }) => {
   }, [range]);
 
   return (
-    <div className="flex flex-col h-full p-8 max-w-6xl mx-auto w-full relative z-10">
-      <div className="mb-12 text-center">
-        <h2 className="text-3xl font-bold text-coffee-100 mb-3">Phase 1: Binary Search Verification</h2>
+    <div className="flex flex-col h-full p-6 max-w-6xl mx-auto w-full relative z-10 overflow-hidden">
+      <div className="mb-6 text-center shrink-0">
+        <h2 className="text-3xl font-bold text-coffee-100 mb-2">Phase 1: Binary Search Verification</h2>
         <p className="text-coffee-300 max-w-2xl mx-auto text-lg">
           The referee uses binary search on checkpoints to efficiently find the exact training step where execution diverged.
         </p>
       </div>
 
       {/* Visualization of Steps */}
-      <div className="flex-1 flex flex-col items-center justify-start space-y-16">
+      <div className="flex-1 flex flex-col items-center justify-center space-y-8 min-h-0">
         
-        <div className="flex w-full justify-between items-end px-2 h-32 relative">
+        <div className="flex w-full justify-between items-end px-2 h-32 relative shrink-0">
           {/* Connecting line */}
           <div className="absolute bottom-6 left-0 right-0 h-0.5 bg-coffee-800 z-0"></div>
 
@@ -107,12 +107,12 @@ const Phase1Stage: React.FC<Phase1StageProps> = ({ onComplete }) => {
         </div>
 
         {/* Controls */}
-        <div className="flex flex-col items-center space-y-6 w-full max-w-2xl">
-          <div className="bg-coffee-800/50 backdrop-blur-sm p-6 rounded-2xl border border-coffee-700 w-full shadow-lg">
-            <h3 className="text-sm font-bold text-coffee-400 mb-3 uppercase tracking-wider flex items-center gap-2">
+        <div className="flex flex-col items-center space-y-4 w-full max-w-xl shrink-0 pb-4">
+          <div className="bg-coffee-800/50 backdrop-blur-sm p-5 rounded-2xl border border-coffee-700 w-full shadow-lg flex flex-col max-h-[200px]">
+            <h3 className="text-sm font-bold text-coffee-400 mb-2 uppercase tracking-wider flex items-center gap-2 shrink-0">
                 <Search size={14} /> Referee Log
             </h3>
-            <div className="h-32 overflow-y-auto space-y-2 font-mono text-xs text-coffee-300 pr-2 scrollbar-thin scrollbar-thumb-coffee-700">
+            <div className="overflow-y-auto space-y-2 font-mono text-xs text-coffee-300 pr-2 scrollbar-thin scrollbar-thumb-coffee-700 flex-1">
               {history.length === 0 && <p className="opacity-40 italic">Waiting to start verification process...</p>}
               {history.map((h, i) => (
                 <div key={i} className="border-b border-coffee-700/50 pb-1 flex items-center gap-2">
@@ -132,7 +132,7 @@ const Phase1Stage: React.FC<Phase1StageProps> = ({ onComplete }) => {
              <button
              onClick={handleBisect}
              disabled={checking}
-             className="bg-verde-600 hover:bg-verde-500 disabled:bg-coffee-800 disabled:text-coffee-600 disabled:cursor-not-allowed text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg transition-all flex items-center space-x-3"
+             className="bg-verde-600 hover:bg-verde-500 disabled:bg-coffee-800 disabled:text-coffee-600 disabled:cursor-not-allowed text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg transition-all flex items-center space-x-3 w-full justify-center"
            >
              {checking ? (
                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
@@ -144,7 +144,7 @@ const Phase1Stage: React.FC<Phase1StageProps> = ({ onComplete }) => {
           ) : (
             <button
             onClick={onComplete}
-            className="bg-coffee-200 hover:bg-white text-coffee-950 px-10 py-4 rounded-xl font-bold text-lg shadow-[0_0_20px_rgba(224,209,201,0.3)] transition-all flex items-center space-x-3 animate-pulse"
+            className="bg-coffee-200 hover:bg-white text-coffee-950 px-10 py-4 rounded-xl font-bold text-lg shadow-[0_0_20px_rgba(224,209,201,0.3)] transition-all flex items-center space-x-3 animate-pulse w-full justify-center"
           >
             <span>Enter Phase 2</span>
             <ArrowRight size={20} />
