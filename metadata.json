@@ -1,0 +1,5 @@
+{
+  "name": "Verde: Interactive ML Verification",
+  "description": "An interactive simulation explaining the Verde protocol for verifiable machine learning delegation and RepOps.",
+  "requestFramePermissions": []
+}

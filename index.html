@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#191513" />
+    <title>Verde Simulation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Space Grotesk', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              coffee: {
+                950: '#0c0a09', // Deepest Black/Brown
+                900: '#151210', // Main BG (Espresso)
+                800: '#1f1b18', // Panels (Dark Roast)
+                700: '#2e2623', // Borders/Separators
+                600: '#4a3b36',
+                500: '#755e53', // Muted Earth
+                400: '#a38b7e', // Light Earth
+                300: '#c7b3a9',
+                200: '#e0d1c9',
+                100: '#f5f0ed', // Main Text (Crema)
+                50: '#faf7f5',
+              },
+              verde: {
+                950: '#022c22',
+                900: '#064e3b',
+                800: '#065f46',
+                700: '#047857',
+                600: '#059669', // Primary Button Hover
+                500: '#10b981', // Primary Brand / Actions
+                400: '#34d399', // Highlights
+                300: '#6ee7b7',
+                200: '#a7f3d0',
+                100: '#d1fae5',
+                50: '#ecfdf5',
+              }
+            },
+            animation: {
+              'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+              'draw': 'draw 1.5s ease-out forwards',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              draw: {
+                '0%': { strokeDashoffset: '1000' },
+                '100%': { strokeDashoffset: '0' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-coffee-900 text-coffee-100 antialiased overflow-hidden selection:bg-verde-500 selection:text-white">
+    <div id="root"></div>
+  </body>
+</html>
